@@ -1,0 +1,11 @@
+BÀI TẬP THỰC HÀNH LAB 3 - LẬP TRÌNH DI ĐỘNG ĐA NỀN TẢNG
+
+Họ và tên sinh viên: Phạm Trí Hiển
+Mã số sinh viên (MSSV): 2324802010216
+Đề tài: Xây dựng ứng dụng TechStore - Thiết kế màn hình, điều hướng (Navigation), MaterialPageRoute, Named Routes và truyền nhận dữ liệu giữa các màn hình trong Flutter.
+
+1. Link Source Code trên GitHub:
+https://github.com/PhamTriHien/2324802010216_PhamTriHien_Lab3.git
+
+2. Link Video Demo bài tập trên YouTube:
+[DÁN ĐƯỜNG LINK VIDEO YOUTUBE CỦA BẠN VÀO ĐÂY SAU KHI TẢI LÊN]
