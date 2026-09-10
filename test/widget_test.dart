@@ -10,8 +10,7 @@ void main() {
     await tester.pumpAndSettle();
 
     // 2. Kiểm tra thông tin sinh viên trên AppBar
-    expect(find.text('TechStore - Lab 3 Navigation'), findsOneWidget);
-    expect(find.text('SV: Phạm Trí Hiển - MSSV: 2324802010216'), findsOneWidget);
+    expect(find.text('Phạm Trí Hiển - 2324802010216'), findsOneWidget);
 
     // 3. Kiểm tra danh sách sản phẩm mẫu đã hiển thị
     expect(find.text('iPhone 16 Pro Max 256GB'), findsOneWidget);
@@ -41,7 +40,7 @@ void main() {
     await tester.pumpAndSettle();
 
     // Xác nhận đã quay về màn hình chính
-    expect(find.text('TechStore - Lab 3 Navigation'), findsOneWidget);
+    expect(find.text('Phạm Trí Hiển - 2324802010216'), findsOneWidget);
   });
 
   testWidgets('Kiểm thử điều hướng Named Route sang màn hình Giỏ hàng /cart',
@@ -66,6 +65,6 @@ void main() {
     await tester.pumpAndSettle();
 
     // Xác nhận đã quay lại màn hình chính
-    expect(find.text('TechStore - Lab 3 Navigation'), findsOneWidget);
+    expect(find.text('Phạm Trí Hiển - 2324802010216'), findsOneWidget);
   });
 }

@@ -173,18 +173,9 @@ class _ProductListScreenState extends State<ProductListScreen> {
         elevation: 1,
         backgroundColor: Colors.indigo.shade700,
         foregroundColor: Colors.white,
-        title: const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'TechStore - Lab 3 Navigation',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            Text(
-              'SV: Phạm Trí Hiển - MSSV: 2324802010216',
-              style: TextStyle(fontSize: 12, color: Colors.white70),
-            ),
-          ],
+        title: const Text(
+          'Phạm Trí Hiển - 2324802010216',
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
         actions: [
           // Nút xem giỏ hàng kèm Badge số lượng
@@ -205,71 +196,40 @@ class _ProductListScreenState extends State<ProductListScreen> {
       ),
       body: Column(
         children: [
-          // Thanh tìm kiếm và ghi chú minh họa kỹ thuật
+          // Thanh tìm kiếm sản phẩm
           Container(
-            padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
             color: Colors.white,
-            child: Column(
-              children: [
-                TextField(
-                  controller: _searchController,
-                  decoration: InputDecoration(
-                    hintText: 'Tìm kiếm sản phẩm, thương hiệu...',
-                    prefixIcon: const Icon(Icons.search),
-                    suffixIcon: _searchKeyword.isNotEmpty
-                        ? IconButton(
-                            icon: const Icon(Icons.clear),
-                            onPressed: () {
-                              _searchController.clear();
-                              setState(() {
-                                _searchKeyword = '';
-                              });
-                            },
-                          )
-                        : null,
-                    filled: true,
-                    fillColor: Colors.grey.shade100,
-                    contentPadding: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 16),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide.none,
-                    ),
-                  ),
-                  onChanged: (val) {
-                    setState(() {
-                      _searchKeyword = val;
-                    });
-                  },
+            child: TextField(
+              controller: _searchController,
+              decoration: InputDecoration(
+                hintText: 'Tìm kiếm sản phẩm, thương hiệu...',
+                prefixIcon: const Icon(Icons.search),
+                suffixIcon: _searchKeyword.isNotEmpty
+                    ? IconButton(
+                        icon: const Icon(Icons.clear),
+                        onPressed: () {
+                          _searchController.clear();
+                          setState(() {
+                            _searchKeyword = '';
+                          });
+                        },
+                      )
+                    : null,
+                filled: true,
+                fillColor: Colors.grey.shade100,
+                contentPadding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                  borderSide: BorderSide.none,
                 ),
-                const SizedBox(height: 8),
-                // Thanh thông báo hướng dẫn trải nghiệm 2 phương thức điều hướng
-                Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                  decoration: BoxDecoration(
-                    color: Colors.indigo.shade50,
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: Colors.indigo.shade100),
-                  ),
-                  child: const Row(
-                    children: [
-                      Icon(Icons.info_outline, size: 16, color: Colors.indigo),
-                      SizedBox(width: 6),
-                      Expanded(
-                        child: Text(
-                          'Chạm thẻ: MaterialPageRoute | Bấm icon ℹ: Named Route',
-                          style: TextStyle(
-                            fontSize: 11,
-                            color: Colors.indigo,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+              ),
+              onChanged: (val) {
+                setState(() {
+                  _searchKeyword = val;
+                });
+              },
             ),
           ),
 
