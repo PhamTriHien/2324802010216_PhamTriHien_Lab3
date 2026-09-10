@@ -15,6 +15,7 @@ class Product {
   final IconData icon;
   final Color themeColor;
   final int stock;
+  final String? imageUrl;
   bool isFavorite;
 
   Product({
@@ -31,6 +32,7 @@ class Product {
     required this.icon,
     required this.themeColor,
     required this.stock,
+    this.imageUrl,
     this.isFavorite = false,
   });
 
@@ -55,6 +57,7 @@ class Product {
     IconData? icon,
     Color? themeColor,
     int? stock,
+    String? imageUrl,
     bool? isFavorite,
   }) {
     return Product(
@@ -71,6 +74,7 @@ class Product {
       icon: icon ?? this.icon,
       themeColor: themeColor ?? this.themeColor,
       stock: stock ?? this.stock,
+      imageUrl: imageUrl ?? this.imageUrl,
       isFavorite: isFavorite ?? this.isFavorite,
     );
   }

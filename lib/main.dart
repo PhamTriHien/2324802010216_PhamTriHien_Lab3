@@ -6,9 +6,6 @@ import 'screens/product_detail_screen.dart';
 import 'screens/product_list_screen.dart';
 
 /// BÀI TẬP LAB 3: ĐIỀU HƯỚNG VÀ TRUYỀN NHẬN DỮ LIỆU MÀN HÌNH (FLUTTER NAVIGATION)
-/// Sinh viên thực hiện: Phạm Trí Hiển
-/// Mã số sinh viên: 2324802010216
-/// Môn học: Lập trình di động đa nền tảng
 void main() {
   runApp(const TechStoreApp());
 }

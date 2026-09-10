@@ -127,22 +127,59 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                   tag: 'product_hero_${_currentProduct.id}',
                   child: Container(
                     width: double.infinity,
-                    height: 240,
+                    height: 250,
                     decoration: BoxDecoration(
-                      color: _currentProduct.themeColor.withAlpha(25),
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
                         color: _currentProduct.themeColor.withAlpha(60),
                         width: 1.5,
                       ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withAlpha(20),
+                          blurRadius: 12,
+                          offset: const Offset(0, 4),
+                        ),
+                      ],
                     ),
-                    child: Center(
-                      child: Icon(
-                        _currentProduct.icon,
-                        size: 130,
-                        color: _currentProduct.themeColor,
-                      ),
-                    ),
+                    clipBehavior: Clip.antiAlias,
+                    child: _currentProduct.imageUrl != null &&
+                            _currentProduct.imageUrl!.isNotEmpty
+                        ? Image.network(
+                            _currentProduct.imageUrl!,
+                            fit: BoxFit.cover,
+                            loadingBuilder: (context, child, loadingProgress) {
+                              if (loadingProgress == null) return child;
+                              return Container(
+                                color: _currentProduct.themeColor.withAlpha(25),
+                                child: const Center(
+                                  child: CircularProgressIndicator(),
+                                ),
+                              );
+                            },
+                            errorBuilder: (context, error, stackTrace) {
+                              return Container(
+                                color: _currentProduct.themeColor.withAlpha(25),
+                                child: Center(
+                                  child: Icon(
+                                    _currentProduct.icon,
+                                    size: 130,
+                                    color: _currentProduct.themeColor,
+                                  ),
+                                ),
+                              );
+                            },
+                          )
+                        : Container(
+                            color: _currentProduct.themeColor.withAlpha(25),
+                            child: Center(
+                              child: Icon(
+                                _currentProduct.icon,
+                                size: 130,
+                                color: _currentProduct.themeColor,
+                              ),
+                            ),
+                          ),
                   ),
                 ),
               ),

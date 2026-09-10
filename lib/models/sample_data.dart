@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'product.dart';
 
-/// Dữ liệu sản phẩm thực tế cho ứng dụng TechStore
+/// Dữ liệu sản phẩm thực tế kèm hình ảnh thật trên kệ hàng/quầy trưng bày cho ứng dụng Lab 3
+/// Sinh viên: Phạm Trí Hiển - MSSV: 2324802010216
 final List<Product> sampleProducts = [
   Product(
     id: 'prod_01',
@@ -13,7 +14,7 @@ final List<Product> sampleProducts = [
     rating: 4.9,
     reviewCount: 245,
     description:
-        'iPhone 16 Pro Max sở hữu thiết kế titan cấp 5 bền nhẹ, màn hình Super Retina XDR 6.9 inch với viền mỏng nhất từ trước đến nay. Trang bị chip A18 Pro mạnh mẽ vượt trội cùng nút điều khiển camera (Camera Control) hoàn toàn mới.',
+        'iPhone 16 Pro Max sở hữu thiết kế titan cấp 5 bền nhẹ, màn hình Super Retina XDR 6.9 inch với viền mỏng nhất từ trước đến nay. Trang bị chip A18 Pro mạnh mẽ vượt trội cùng nút điều khiển camera (Camera Control) hoàn toàn mới. Trưng bày trực tiếp tại kệ trải nghiệm Flagship Store.',
     specifications: {
       'Màn hình': '6.9" OLED Super Retina XDR 120Hz',
       'Chip xử lý': 'Apple A18 Pro 6 nhân',
@@ -23,6 +24,8 @@ final List<Product> sampleProducts = [
       'Pin': '4.685 mAh, Sạc nhanh 25W',
     },
     icon: Icons.phone_iphone,
+    imageUrl:
+        'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&auto=format&fit=crop&q=80',
     themeColor: const Color(0xFF4A4E69),
     stock: 15,
   ),
@@ -36,7 +39,7 @@ final List<Product> sampleProducts = [
     rating: 4.8,
     reviewCount: 118,
     description:
-        'MacBook Pro 14 inch trang bị chip Apple M3 Pro mang lại hiệu năng đỉnh cao cho công việc lập trình và thiết kế chuyên nghiệp. Màn hình Liquid Retina XDR độ sáng tối đa 1600 nits, thời lượng pin lên đến 22 giờ liên tục.',
+        'MacBook Pro 14 inch trang bị chip Apple M3 Pro mang lại hiệu năng đỉnh cao cho công việc lập trình và thiết kế chuyên nghiệp. Màn hình Liquid Retina XDR độ sáng tối đa 1600 nits, thời lượng pin lên đến 22 giờ liên tục. Sản phẩm trưng bày nguyên khối trên kệ gỗ cao cấp.',
     specifications: {
       'Màn hình': '14.2" Liquid Retina XDR (3024 x 1964) 120Hz',
       'CPU': 'Apple M3 Pro 11 nhân',
@@ -46,6 +49,8 @@ final List<Product> sampleProducts = [
       'Trọng lượng': '1.61 kg',
     },
     icon: Icons.laptop_mac,
+    imageUrl:
+        'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&auto=format&fit=crop&q=80',
     themeColor: const Color(0xFF22223B),
     stock: 8,
   ),
@@ -59,7 +64,7 @@ final List<Product> sampleProducts = [
     rating: 4.7,
     reviewCount: 312,
     description:
-        'Tai nghe chụp tai chống ồn chủ động hàng đầu thế giới với bộ xử lý Integrated Processor V1 và HD QN1. Hỗ trợ âm thanh Hi-Res Audio Wireless LDAC, đàm thoại chuẩn AI với 4 micro beamforming và pin 30 giờ.',
+        'Tai nghe chụp tai chống ồn chủ động hàng đầu thế giới với bộ xử lý Integrated Processor V1 và HD QN1. Hỗ trợ âm thanh Hi-Res Audio Wireless LDAC, đàm thoại chuẩn AI với 4 micro beamforming và pin 30 giờ. Đặt trên giá đỡ trưng bày âm thanh chuyên nghiệp.',
     specifications: {
       'Loại tai nghe': 'Over-ear Chống ồn chủ động (ANC)',
       'Thời lượng pin': '30 giờ (bật ANC), 40 giờ (tắt ANC)',
@@ -68,6 +73,8 @@ final List<Product> sampleProducts = [
       'Trọng lượng': '250 g',
     },
     icon: Icons.headphones,
+    imageUrl:
+        'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=80',
     themeColor: const Color(0xFF1D3557),
     stock: 22,
   ),
@@ -81,7 +88,7 @@ final List<Product> sampleProducts = [
     rating: 4.9,
     reviewCount: 89,
     description:
-        'Đồng hồ thể thao chuyên nghiệp với khung vỏ titan 49mm, mặt kính sapphire chống trầy xước và độ sáng màn hình lên tới 3000 nits. GPS băng tần kép chuẩn L1 & L5 cực kỳ chính xác cho các hoạt động thám hiểm ngoài trời.',
+        'Đồng hồ thể thao chuyên nghiệp với khung vỏ titan 49mm, mặt kính sapphire chống trầy xước và độ sáng màn hình lên tới 3000 nits. GPS băng tần kép chuẩn L1 & L5 cực kỳ chính xác cho các hoạt động thám hiểm ngoài trời. Đặt tại bục trưng bày chuyên biệt.',
     specifications: {
       'Kích thước vỏ': '49 mm Hợp kim Titan',
       'Độ sáng': 'Tối đa 3000 nits',
@@ -90,6 +97,8 @@ final List<Product> sampleProducts = [
       'Cảm biến': 'Nhịp tim, ECG, SpO2, Đo nhiệt độ',
     },
     icon: Icons.watch,
+    imageUrl:
+        'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80',
     themeColor: const Color(0xFFE76F51),
     stock: 10,
   ),
@@ -113,6 +122,8 @@ final List<Product> sampleProducts = [
       'Tương thích': 'Apple Pencil Pro, Magic Keyboard mới',
     },
     icon: Icons.tablet_mac,
+    imageUrl:
+        'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=800&auto=format&fit=crop&q=80',
     themeColor: const Color(0xFF2A9D8F),
     stock: 12,
   ),
@@ -135,7 +146,55 @@ final List<Product> sampleProducts = [
       'Hệ điều hành': 'macOS / Windows / Linux / Android',
     },
     icon: Icons.keyboard,
+    imageUrl:
+        'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&auto=format&fit=crop&q=80',
     themeColor: const Color(0xFF6D597A),
     stock: 18,
+  ),
+  Product(
+    id: 'prod_07',
+    name: 'Gian hàng Đồ uống & Nước ngọt Kệ Siêu Thị',
+    category: 'Kệ siêu thị',
+    brand: 'Retail Store',
+    price: 45000,
+    originalPrice: 50000,
+    rating: 4.9,
+    reviewCount: 520,
+    description:
+        'Hình ảnh thực tế dãy kệ hàng siêu thị trưng bày các sản phẩm nước giải khát, nước khoáng đóng chai và lon nhập khẩu, xếp tầng ngăn nắp đạt chuẩn trưng bày bán lẻ quốc tế.',
+    specifications: {
+      'Vị trí': 'Kệ hàng Aisle 03 - Siêu thị bán lẻ',
+      'Quy cách': 'Lốc 6 lon / Thùng 24 lon',
+      'Bảo quản': 'Nhiệt độ phòng hoặc ngăn mát tủ kệ',
+      'Hạn sử dụng': '12 tháng kể từ ngày sản xuất',
+    },
+    icon: Icons.local_drink,
+    imageUrl:
+        'https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=800&auto=format&fit=crop&q=80',
+    themeColor: const Color(0xFF0077B6),
+    stock: 150,
+  ),
+  Product(
+    id: 'prod_08',
+    name: 'Kệ Bánh Kẹo & Đồ Ăn Vặt Snack Siêu Thị',
+    category: 'Kệ siêu thị',
+    brand: 'Supermarket',
+    price: 65000,
+    originalPrice: 75000,
+    rating: 4.8,
+    reviewCount: 380,
+    description:
+        'Hình ảnh kệ hàng siêu thị thực tế chuyên đồ ăn vặt, snack khoai tây và bánh ngọt đóng gói nhiều màu sắc bắt mắt trên các giá treo và tầng kệ trưng bày tiện lợi.',
+    specifications: {
+      'Vị trí': 'Kệ hàng Aisle 05 - Khu bánh kẹo',
+      'Quy cách': 'Gói snack 110g / Hộp bánh',
+      'Chứng nhận': 'An toàn vệ sinh thực phẩm HACCP',
+      'Xuất xứ': 'Việt Nam & Nhập khẩu',
+    },
+    icon: Icons.cookie,
+    imageUrl:
+        'https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?w=800&auto=format&fit=crop&q=80',
+    themeColor: const Color(0xFFF77F00),
+    stock: 95,
   ),
 ];

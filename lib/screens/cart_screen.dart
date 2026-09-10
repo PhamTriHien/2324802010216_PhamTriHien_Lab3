@@ -252,7 +252,7 @@ class _CartScreenState extends State<CartScreen> {
                         ),
                         child: Row(
                           children: [
-                            // Icon sản phẩm
+                            // Ảnh/Icon sản phẩm
                             Container(
                               width: 60,
                               height: 60,
@@ -260,11 +260,26 @@ class _CartScreenState extends State<CartScreen> {
                                 color: item.product.themeColor.withAlpha(25),
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              child: Icon(
-                                item.product.icon,
-                                color: item.product.themeColor,
-                                size: 32,
-                              ),
+                              clipBehavior: Clip.antiAlias,
+                              child: item.product.imageUrl != null &&
+                                      item.product.imageUrl!.isNotEmpty
+                                  ? Image.network(
+                                      item.product.imageUrl!,
+                                      fit: BoxFit.cover,
+                                      errorBuilder:
+                                          (context, error, stackTrace) {
+                                        return Icon(
+                                          item.product.icon,
+                                          color: item.product.themeColor,
+                                          size: 32,
+                                        );
+                                      },
+                                    )
+                                  : Icon(
+                                      item.product.icon,
+                                      color: item.product.themeColor,
+                                      size: 32,
+                                    ),
                             ),
                             const SizedBox(width: 12),
 

@@ -46,6 +46,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
     'Đồng hồ',
     'Máy tính bảng',
     'Phụ kiện',
+    'Kệ siêu thị',
   ];
 
   @override
@@ -324,20 +325,63 @@ class _ProductListScreenState extends State<ProductListScreen> {
                                   // Khung hình ảnh/icon kèm nút Favorite & Tag giảm giá
                                   Stack(
                                     children: [
-                                      Container(
+                                      SizedBox(
                                         height: 130,
                                         width: double.infinity,
-                                        color: product.themeColor.withAlpha(25),
-                                        child: Center(
-                                          child: Hero(
-                                            tag:
-                                                'product_hero_${product.id}',
-                                            child: Icon(
-                                              product.icon,
-                                              size: 64,
-                                              color: product.themeColor,
-                                            ),
-                                          ),
+                                        child: Hero(
+                                          tag: 'product_hero_${product.id}',
+                                          child: product.imageUrl != null &&
+                                                  product.imageUrl!.isNotEmpty
+                                              ? Image.network(
+                                                  product.imageUrl!,
+                                                  fit: BoxFit.cover,
+                                                  loadingBuilder: (context, child,
+                                                      loadingProgress) {
+                                                    if (loadingProgress == null) {
+                                                      return child;
+                                                    }
+                                                    return Container(
+                                                      color: product.themeColor
+                                                          .withAlpha(25),
+                                                      child: const Center(
+                                                        child: SizedBox(
+                                                          width: 24,
+                                                          height: 24,
+                                                          child:
+                                                              CircularProgressIndicator(
+                                                            strokeWidth: 2,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    );
+                                                  },
+                                                  errorBuilder: (context, error,
+                                                      stackTrace) {
+                                                    return Container(
+                                                      color: product.themeColor
+                                                          .withAlpha(25),
+                                                      child: Center(
+                                                        child: Icon(
+                                                          product.icon,
+                                                          size: 64,
+                                                          color:
+                                                              product.themeColor,
+                                                        ),
+                                                      ),
+                                                    );
+                                                  },
+                                                )
+                                              : Container(
+                                                  color: product.themeColor
+                                                      .withAlpha(25),
+                                                  child: Center(
+                                                    child: Icon(
+                                                      product.icon,
+                                                      size: 64,
+                                                      color: product.themeColor,
+                                                    ),
+                                                  ),
+                                                ),
                                         ),
                                       ),
                                       // Nút yêu thích
